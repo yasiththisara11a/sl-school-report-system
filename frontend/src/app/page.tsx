@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { apiFetch } from "@/lib/api";
 import { GraduationCap, BookOpen, ShieldCheck, AlertCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -143,6 +144,13 @@ export default function LoginPage() {
           >
             {loading ? "Signing in..." : `Sign in as ${role === "student" ? "Student" : "Teacher"}`}
           </button>
+
+          <p className="text-center text-xs text-slate-600 pt-2">
+  Don&apos;t have an account?{" "}
+  <Link href="/register" className="text-blue-700 font-bold hover:underline">
+    Create a Student or Teacher account
+  </Link>
+</p>
 
           {/* Quick Demo Fill Buttons for Viva / Presentation */}
           <div className="pt-4 border-t border-slate-200">
